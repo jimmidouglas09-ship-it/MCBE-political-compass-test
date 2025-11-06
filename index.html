@@ -77,29 +77,9 @@
               options: [
                 { text: "MEGA", x: -3, y: -3 },
                 { text: "MAGA", x: 4, y: 0 },
-                { text: "Danny15 coop better", x: 1, y: 3 },
+                { text: "Idk", x: 1, y: 1 },
               ],
               effect: "Careful on what you answer..."
-            }
-            {
-              id: 7,
-              text: "What do you think about Multi istance?",
-              options: [
-                { text: "Should be BANNED", x: 3, y: 3 },
-                { text: "It's ok, but I don't like the fact that it reads memory", x: -1, y: -1 },
-                { text: "I like it and it should be improved even more", x: -3, y: -3 },
-              ],
-              effect: "Lol869 is watching..."
-            }
-            {
-              id: 8,
-              text: "RTA or IGT?",
-              options: [
-                { text: "RTA", x: 3, y: 3 },
-                { text: "IGT", x: -3, y: -3 },
-                { text: "IGT only for ssg", x: -3, y: 0 },
-              ],
-              effect: "Dabbanana"
             }
           ];
 
@@ -146,7 +126,7 @@
             if (x > 30 && y < -30) return "You have INTERESTING opinions...";
             if (Math.abs(x) < 30 && y > 30) return "Bro please we are NOT in 2020 anymore...";
             if (Math.abs(x) < 30 && y < -30) return "Yowza! Good boy";
-            return "You are chill.";
+            return "You are an NPC";
           };
 
           const reset = () => {
@@ -163,7 +143,7 @@
             const svgY = 250 + (position.y * 2);
             
             return (
-              <div className="min-h-screen">
+              <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-green-900 p-8">
                 <div className="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-2xl p-8">
                   <h1 className="text-4xl font-bold text-center mb-6 text-white">Your MCBE Speedrunning Compass</h1>
                   
@@ -247,7 +227,7 @@
           }
 
           return (
-            <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-green-900 p-8">
+            <div className="min-h-screen bg-black p-8">
               <div className="max-w-3xl mx-auto bg-gray-800 rounded-lg shadow-2xl p-8">
                 <h1 className="text-4xl font-bold text-center mb-2 text-white">MCBE Speedrunning Compass</h1>
                 <p className="text-center text-gray-400 mb-8">Are YOU Danny15?</p>
