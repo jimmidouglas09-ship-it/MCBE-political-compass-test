@@ -23,113 +23,63 @@
           const questions = [
             {
               id: 1,
-              text: "When searching for the stronghold, do you prefer...",
+              text: "Do you prefer 1.0, 1.2-1.14, 1.16, 1.18+?",
               options: [
-                { text: "Eye spy method (throw eyes, follow)", x: -2, y: 1 },
-                { text: "Triangulation with F3", x: 2, y: -1 },
-                { text: "Pie ray (calculated angle method)", x: 1, y: -2 },
-                { text: "Divine method (calculated coordinates)", x: 2, y: 0 }
+                { text: "1.0", x: -2, y: -2 },
+                { text: "1.2-1.14", x: -2, y: 1 },
+                { text: "1.16", x: -2, y: 0 },
+                { text: "1.18+", x: -4, y: -2 }
               ],
-              effect: "Measures traditional vs mathematical/modern approaches"
+              effect: "Are YOU an Ophie fanboi?"
             },
             {
               id: 2,
-              text: "Your opinion on one-cycling the dragon?",
+              text: "Should cheaters have second chance?",
               options: [
-                { text: "Always go for it, YOLO", x: 0, y: -2 },
-                { text: "Only if I have enough beds", x: 0, y: 1 },
-                { text: "I prefer the classic multiple-cycle strategy", x: -2, y: 2 },
-                { text: "I calculate exact bed placement patterns", x: 2, y: 0 }
+                { text: "Yes", x: -3, y: 3 },
+                { text: "No, never", x: 1, y: -3 },
+                { text: "Generally no, but cosider situation first", x: -2, y: 0 }
               ],
-              effect: "Measures risk tolerance and innovation"
+              effect: "Well well well"
             },
             {
               id: 3,
-              text: "How do you feel about bastion routing?",
+              text: "Who is da GOAT?",
               options: [
-                { text: "Essential for competitive times", x: 1, y: -1 },
-                { text: "Too risky, I skip bastions", x: -1, y: 2 },
-                { text: "Only if RNG is good", x: 0, y: 0 },
-                { text: "I use calculated routes with backup plans", x: 2, y: 1 }
+                { text: "Danny15 or Kobra or Leezard", x: 2, y: 3 },
+                { text: "Khalid or Lol869", x: -2, y: -1 },
+                { text: "Verdant or OphieSR", x: 3, y: -3 },
               ],
-              effect: "Measures structure interaction philosophy"
+              effect: "Also called I.Q. test"
             },
             {
               id: 4,
-              text: "Preferred nether travel method?",
+              text: "Should input split happen?",
               options: [
-                { text: "Boat on lava with strider", x: -1, y: 1 },
-                { text: "Build bridges carefully", x: -2, y: 2 },
-                { text: "Bed/respawn anchor travel", x: 1, y: -1 },
-                { text: "Optimal pathing with calculated risks", x: 2, y: 0 }
+                { text: "Yes", x: -2, y: -3 },
+                { text: "No im gonna cry", x: 3, y: 3 },
               ],
-              effect: "Measures movement philosophy"
+              effect: "Diship"
             },
             {
               id: 5,
-              text: "How do you obtain blaze rods?",
+              text: "What should be the proof standards?",
               options: [
-                { text: "Farm spawner safely from distance", x: -1, y: 2 },
-                { text: "Aggressive melee with shield", x: 0, y: -1 },
-                { text: "Use fortress layout knowledge for efficiency", x: 2, y: 0 },
-                { text: "No shield, just dodge and hit", x: 0, y: -2 }
+                { text: "As high as possible", x: -3, y: -2 },
+                { text: "They are ok right now", x: 1, y: 1 },
+                { text: "Lower than right now", x: 3, y: 3 },
               ],
-              effect: "Measures combat approach"
+              effect: "How much do you understand about this game?"
             },
             {
               id: 6,
-              text: "Your stance on pre-1.16 strategies?",
+              text: "MEGA coop or MAGA coop?",
               options: [
-                { text: "Classic methods are still valid", x: -2, y: 1 },
-                { text: "Outdated, always use modern tech", x: 2, y: -1 },
-                { text: "Mix old and new as needed", x: 0, y: 0 },
-                { text: "I study history but run current meta", x: 1, y: 1 }
+                { text: "MEGA", x: -3, y: -3 },
+                { text: "MAGA", x: 4, y: 0 },
+                { text: "Idk", x: 1, y: 1 },
               ],
-              effect: "Measures traditional vs progressive mindset"
-            },
-            {
-              id: 7,
-              text: "How do you handle poor early game RNG?",
-              options: [
-                { text: "Reset immediately", x: 1, y: -2 },
-                { text: "Adapt and continue", x: 0, y: 1 },
-                { text: "Follow my practiced route regardless", x: -1, y: 1 },
-                { text: "Calculate if run is mathematically viable", x: 2, y: 0 }
-              ],
-              effect: "Measures reset philosophy"
-            },
-            {
-              id: 8,
-              text: "Your approach to practicing?",
-              options: [
-                { text: "Full runs only, real experience", x: -2, y: 0 },
-                { text: "Segment practice for weak areas", x: 1, y: 1 },
-                { text: "Theory craft and simulation", x: 2, y: 0 },
-                { text: "Push boundaries with risky strats", x: 0, y: -2 }
-              ],
-              effect: "Measures training philosophy"
-            },
-            {
-              id: 9,
-              text: "Portal positioning strategy?",
-              options: [
-                { text: "Overworld portal linking calculations", x: 2, y: 0 },
-                { text: "Random portal, go with the flow", x: -2, y: -1 },
-                { text: "Strategic but flexible placement", x: 0, y: 0 },
-                { text: "Min-max every coordinate", x: 2, y: 1 }
-              ],
-              effect: "Measures planning vs improvisation"
-            },
-            {
-              id: 10,
-              text: "What defines a 'good run' for you?",
-              options: [
-                { text: "Personal best time", x: 0, y: -1 },
-                { text: "Clean execution, no major mistakes", x: -1, y: 2 },
-                { text: "Successfully pulling off risky strats", x: 0, y: -2 },
-                { text: "Optimal routing and decision making", x: 2, y: 1 }
-              ],
-              effect: "Measures success criteria"
+              effect: "Careful on what you answer..."
             }
           ];
 
