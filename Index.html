@@ -7,7 +7,6 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/recharts@2.5.0/dist/Recharts.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -15,7 +14,6 @@
     
     <script type="text/babel">
         const { useState } = React;
-        const { ScatterChart, Scatter, Cell, XAxis, YAxis, CartesianGrid, ResponsiveContainer } = Recharts;
 
         const MCBESpeedrunCompass = () => {
           const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -190,6 +188,10 @@
           if (showResults) {
             const position = calculatePosition();
             
+            // Convert position to SVG coordinates (center at 250, 250 in a 500x500 viewbox)
+            const svgX = 250 + (position.x * 2);
+            const svgY = 250 + (position.y * 2);
+            
             return (
               <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-green-900 p-8">
                 <div className="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-2xl p-8">
@@ -199,36 +201,48 @@
                     <h2 className="text-2xl font-bold text-center mb-4 text-green-400">{getLabel(position.x, position.y)}</h2>
                     <p className="text-lg text-center text-gray-300 mb-6">{getDescription(position.x, position.y)}</p>
                     
-                    <div className="relative bg-gray-800 rounded-lg p-4" style={{ height: '500px' }}>
-                      <ResponsiveContainer width="100%" height="100%">
-                        <ScatterChart margin={{ top: 20, right: 20, bottom: 60, left: 60 }}>
-                          <CartesianGrid strokeDasharray="3 3" stroke="#444" />
-                          <XAxis 
-                            type="number" 
-                            dataKey="x" 
-                            domain={[-100, 100]} 
-                            ticks={[-100, -50, 0, 50, 100]}
-                            stroke="#888"
-                            label={{ value: 'Traditional ← → Modern', position: 'bottom', offset: 40, fill: '#888' }}
-                          />
-                          <YAxis 
-                            type="number" 
-                            dataKey="y" 
-                            domain={[-100, 100]} 
-                            ticks={[-100, -50, 0, 50, 100]}
-                            stroke="#888"
-                            label={{ value: 'Progressive/Risky ← → Conservative/Safe', angle: -90, position: 'left', offset: 20, fill: '#888' }}
-                          />
-                          <Scatter data={[position]} fill="#00ff00">
-                            <Cell fill="#00ff00" />
-                          </Scatter>
-                        </ScatterChart>
-                      </ResponsiveContainer>
-                      
-                      <div className="absolute top-8 left-16 text-sm text-gray-400">Traditional<br/>Conservative</div>
-                      <div className="absolute top-8 right-8 text-sm text-gray-400 text-right">Modern<br/>Conservative</div>
-                      <div className="absolute bottom-20 left-16 text-sm text-gray-400">Traditional<br/>Progressive</div>
-                      <div className="absolute bottom-20 right-8 text-sm text-gray-400 text-right">Modern<br/>Progressive</div>
+                    <div className="bg-gray-800 rounded-lg p-4">
+                      <svg viewBox="0 0 500 500" className="w-full h-auto">
+                        {/* Grid lines */}
+                        <line x1="50" y1="250" x2="450" y2="250" stroke="#444" strokeWidth="1" strokeDasharray="5,5" />
+                        <line x1="250" y1="50" x2="250" y2="450" stroke="#444" strokeWidth="1" strokeDasharray="5,5" />
+                        
+                        {/* Axes */}
+                        <line x1="50" y1="250" x2="450" y2="250" stroke="#888" strokeWidth="2" />
+                        <line x1="250" y1="50" x2="250" y2="450" stroke="#888" strokeWidth="2" />
+                        
+                        {/* Tick marks on X axis */}
+                        <line x1="50" y1="245" x2="50" y2="255" stroke="#888" strokeWidth="1" />
+                        <line x1="150" y1="245" x2="150" y2="255" stroke="#888" strokeWidth="1" />
+                        <line x1="350" y1="245" x2="350" y2="255" stroke="#888" strokeWidth="1" />
+                        <line x1="450" y1="245" x2="450" y2="255" stroke="#888" strokeWidth="1" />
+                        
+                        {/* Tick marks on Y axis */}
+                        <line x1="245" y1="50" x2="255" y2="50" stroke="#888" strokeWidth="1" />
+                        <line x1="245" y1="150" x2="255" y2="150" stroke="#888" strokeWidth="1" />
+                        <line x1="245" y1="350" x2="255" y2="350" stroke="#888" strokeWidth="1" />
+                        <line x1="245" y1="450" x2="255" y2="450" stroke="#888" strokeWidth="1" />
+                        
+                        {/* Labels */}
+                        <text x="250" y="475" textAnchor="middle" fill="#888" fontSize="12">Traditional ← → Modern</text>
+                        <text x="25" y="255" textAnchor="middle" fill="#888" fontSize="12" transform="rotate(-90 25 255)">Progressive/Risky ← → Conservative/Safe</text>
+                        
+                        {/* Quadrant labels */}
+                        <text x="80" y="80" fill="#666" fontSize="11">Traditional</text>
+                        <text x="80" y="95" fill="#666" fontSize="11">Conservative</text>
+                        
+                        <text x="360" y="80" fill="#666" fontSize="11">Modern</text>
+                        <text x="360" y="95" fill="#666" fontSize="11">Conservative</text>
+                        
+                        <text x="80" y="420" fill="#666" fontSize="11">Traditional</text>
+                        <text x="80" y="435" fill="#666" fontSize="11">Progressive</text>
+                        
+                        <text x="360" y="420" fill="#666" fontSize="11">Modern</text>
+                        <text x="360" y="435" fill="#666" fontSize="11">Progressive</text>
+                        
+                        {/* User position dot */}
+                        <circle cx={svgX} cy={svgY} r="8" fill="#00ff00" stroke="#fff" strokeWidth="2" />
+                      </svg>
                     </div>
                     
                     <div className="mt-6 grid grid-cols-2 gap-4 text-sm text-gray-300">
