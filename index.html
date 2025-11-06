@@ -120,12 +120,12 @@
           };
 
           const getDescription = (x, y) => {
-            if (x < -30 && y > 30) return "You're a Classic Fortress Runner - preferring tried-and-true methods with careful, safe execution.";
-            if (x > 30 && y > 30) return "You're a Calculated Optimizer - using modern techniques but maintaining safety through planning.";
-            if (x < -30 && y < -30) return "You're an Old School Risk-Taker - combining traditional methods with aggressive, risky plays.";
-            if (x > 30 && y < -30) return "You're a Cutting Edge Pioneer - pushing boundaries with modern tech and high-risk strategies.";
-            if (Math.abs(x) < 30 && y > 30) return "You're a Consistent Grinder - focused on safe, repeatable strategies regardless of meta.";
-            if (Math.abs(x) < 30 && y < -30) return "You're a Wild Card Runner - willing to take major risks while staying flexible on methods.";
+            if (x < -30 && y > 30) return "You have nice ideas, but you should stop thinking we are still in 2020.";
+            if (x > 30 && y > 30) return "You're a N*ZI.";
+            if (x < -30 && y < -30) return "You're GOOD.";
+            if (x > 30 && y < -30) return "You have INTERESTING opinions...";
+            if (Math.abs(x) < 30 && y > 30) return "Bro please we are NOT in 2020 anymore...";
+            if (Math.abs(x) < 30 && y < -30) return "Yowza! Good boy";
             return "You are an NPC";
           };
 
@@ -199,9 +199,9 @@
                       <div>
                         <strong className="text-white">Left ← → Right:</strong> {position.x.toFixed(1)}
                         <div className="text-xs text-gray-400 mt-1">
-                          {position.x < -30 ? "You favor classic, time-tested methods" : 
-                           position.x > 30 ? "You embrace modern techniques and optimization" : 
-                           "You balance old and new strategies"}
+                          {position.x < -30 ? "You are a good boy" : 
+                           position.x > 30 ? "You are EVIL" : 
+                           "NPC LOL"}
                         </div>
                       </div>
                       <div>
