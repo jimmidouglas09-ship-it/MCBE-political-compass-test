@@ -25,10 +25,10 @@
               id: 1,
               text: "Do you prefer 1.0, 1.2-1.14, 1.16, 1.18+?",
               options: [
-                { text: "1.0", x: -2, y: -2 },
-                { text: "1.2-1.14", x: -2, y: 1 },
-                { text: "1.16", x: -2, y: 0 },
-                { text: "1.18+", x: -4, y: -2 }
+                { text: "1.0", x: -2, y: 1 },
+                { text: "1.2-1.14", x: -1, y: 0 },
+                { text: "1.16", x: 0, y: 0 },
+                { text: "1.18+", x: 3, y: -3 }
               ],
               effect: "Are YOU an Ophie fanboi?"
             },
@@ -36,9 +36,9 @@
               id: 2,
               text: "Should cheaters have second chance?",
               options: [
-                { text: "Yes", x: 3, y: 3 },
-                { text: "No, never", x: -3, y: -1 },
-                { text: "Generally no, but consider situation first", x: 0, y: -2 }
+                { text: "Yes", x: 0, y: -2 },
+                { text: "No, never", x: 0, y: 2 },
+                { text: "Generally no, but consider situation first", x: 0, y: 0 }
               ],
               effect: "Well well well"
             },
@@ -46,8 +46,8 @@
               id: 3,
               text: "Who is da GOAT?",
               options: [
-                { text: "Danny15 or Kobra or Leezard", x: 2, y: 3 },
-                { text: "Khalid or Lol869", x: -2, y: -1 },
+                { text: "Danny15 or Kobra or Leezard", x: 2, y: 2 },
+                { text: "Khalid or Lol869", x: -1, y: 0 },
                 { text: "Verdant or OphieSR", x: 3, y: -3 },
               ],
               effect: "Also called I.Q. test"
@@ -56,8 +56,8 @@
               id: 4,
               text: "Should input split happen?",
               options: [
-                { text: "Yes", x: -2, y: -3 },
-                { text: "No im gonna cry", x: 3, y: 3 },
+                { text: "Yes", x: -3, y: -3 },
+                { text: "No im gonna cry", x: 2, y: 2 },
               ],
               effect: "Diship"
             },
@@ -65,9 +65,9 @@
               id: 5,
               text: "What should be the proof standards?",
               options: [
-                { text: "As high as possible", x: -3, y: -2 },
-                { text: "They are ok right now", x: 1, y: 1 },
-                { text: "Lower than right now", x: 3, y: 3 },
+                { text: "As high as possible", x: -3, y: -3 },
+                { text: "They are ok right now", x: 0, y: 0 },
+                { text: "Lower than right now", x: 2, y: 2 },
               ],
               effect: "How much do you understand about this game?"
             },
@@ -75,9 +75,9 @@
               id: 6,
               text: "MEGA coop or MAGA coop?",
               options: [
-                { text: "MEGA", x: -3, y: -3 },
-                { text: "MAGA", x: 4, y: 0 },
-                { text: "Idk", x: 1, y: 1 },
+                { text: "MEGA", x: -3, y: 0 },
+                { text: "MAGA", x: 3, y: 0 },
+                { text: "Idk", x: 0, y: 0 },
               ],
               effect: "Careful on what you answer..."
             },
@@ -85,9 +85,9 @@
               id: 7,
               text: "What do you think about Multi istance?",
               options: [
-                { text: "Should be BANNED", x: 3, y: 3 },
-                { text: "It's ok, but I don't like the fact that it reads memory", x: -1, y: -1 },
-                { text: "I like it and it should be improved even more", x: -3, y: -3 },
+                { text: "Should be BANNED", x: 0, y: 4 },
+                { text: "It's ok, but I don't like the fact that it reads memory", x: 0, y: 0 },
+                { text: "I like it and it should be improved even more", x: 0, y: -3 },
               ],
               effect: "Lol869 is watching..."
             },
@@ -95,9 +95,9 @@
               id: 8,
               text: "RTA or IGT?",
               options: [
-                { text: "RTA", x: 3, y: 3 },
-                { text: "IGT", x: -3, y: -3 },
-                { text: "IGT only for ssg", x: -3, y: 0 },
+                { text: "RTA", x: 0, y: 3 },
+                { text: "IGT", x: 0, y: -3 },
+                { text: "IGT only for ssg", x: 0, y: -1 },
               ],
               effect: "Dabbanana"
           },
@@ -105,9 +105,9 @@
               id: 9,
               text: "What do you think about the overall state of MCBESR?",
               options: [
-                { text: "Too many pesky newgens, was better before", x: 0, y: 3 },
-                { text: "The community should be more united. Having this many servers isn't good.", x: -3, y: -1 },
-                { text: "I think it's great", x: 0, y: -3 },
+                { text: "Too many pesky newgens, was better before", x: 0, y: 2 },
+                { text: "The community should be more united. Having this many servers isn't good.", x: -2, y: 0 },
+                { text: "I think it's great", x: 0, y: -2 },
               ],
               effect: "You are on THIN ICE pal"
             },
@@ -115,7 +115,7 @@
               id: 10,
               text: "Opinions on cat seed?",
               options: [
-                { text: "Nice seed!", x: 4, y: 0 },
+                { text: "Nice seed!", x: 3, y: 0 },
                 { text: "I HATE it", x: -3, y: 0 },
                 { text: "neutral", x: 0, y: 0 },
               ],
@@ -196,6 +196,10 @@
                         {/* Grid lines */}
                         <line x1="50" y1="250" x2="450" y2="250" stroke="#444" strokeWidth="1" strokeDasharray="5,5" />
                         <line x1="250" y1="50" x2="250" y2="450" stroke="#444" strokeWidth="1" strokeDasharray="5,5" />
+                        
+                        {/* Background text labels */}
+                        <text x="350" y="150" textAnchor="middle" fill="#333" fontSize="32" fontWeight="bold" opacity="0.3">ophieSR</text>
+                        <text x="350" y="350" textAnchor="middle" fill="#333" fontSize="32" fontWeight="bold" opacity="0.3">danny15</text>
                         
                         {/* Axes */}
                         <line x1="50" y1="250" x2="450" y2="250" stroke="#888" strokeWidth="2" />
